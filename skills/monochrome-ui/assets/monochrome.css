@@ -1,0 +1,89 @@
+/* Standalone monochrome UI reference. Scope styles under .mono-page. */
+.mono-page {
+  color-scheme:light;--mono-ink:#000;--mono-muted:#555;--mono-line:#dedede;--mono-surface:#fff;--mono-soft:#f5f5f5;--mono-hover:#222;--mono-focus:#000;
+  --mono-font:system-ui,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+}
+.mono-page{margin:0;min-height:100vh;font:15px/1.6 var(--mono-font);color:var(--mono-ink);background:var(--mono-surface)}
+.mono-page *,.mono-page *::before,.mono-page *::after{box-sizing:border-box}
+.mono-page button,.mono-page input,.mono-page select{font:inherit}
+.mono-page button{cursor:pointer}
+.mono-page a{color:inherit;text-decoration:none}
+.mono-page :is(button,a,input,select,textarea):focus-visible{outline:2px solid var(--mono-focus);outline-offset:3px}
+.mono-page [hidden]{display:none!important}
+.mono-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.mono-shell{width:min(1192px,calc(100% - 48px));margin-inline:auto}
+.mono-header{height:80px;border-bottom:1px solid var(--mono-line);background:#fff}
+.mono-header-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;height:100%}
+.mono-brand{font-size:16px;letter-spacing:-.4px;font-weight:500;line-height:1.3}
+.mono-brand strong{font-weight:800}
+.mono-button{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 16px;min-height:38px;border:1px solid #000;border-radius:0;background:#fff;color:#000;font-size:13px;font-weight:750;line-height:1.4;white-space:normal;text-align:center}
+.mono-button:hover{background:#f0f0f0}
+.mono-button--primary{color:#fff;background:#000}
+.mono-button--primary:hover{background:#222}
+.mono-button:disabled{opacity:.5;cursor:not-allowed}
+.mono-workspace{display:grid;grid-template-columns:264px minmax(0,1fr);gap:26px;align-items:start;padding-block:34px 65px}
+.mono-filter-panel{border:1px solid #000;background:#fff;padding:23px;min-width:0}
+.mono-filter-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px;gap:10px}
+.mono-filter-head h2{font-size:18px;letter-spacing:-.6px;margin:0;line-height:1.4}
+.mono-text-action{border:0;background:transparent;padding:3px;color:#000;font-size:12px;font-weight:750;text-decoration:underline;text-underline-offset:2px}
+.mono-filter-group{margin-bottom:23px;min-width:0}
+.mono-filter-label{display:block;margin-bottom:10px;color:#000;font-size:13px;font-weight:800}
+.mono-select{display:block;width:100%;min-width:0;min-height:44px;border:1px solid #000;border-radius:0;padding:10px 12px;background:#fff;color:#000;font-size:13px}
+.mono-segments{display:flex;gap:4px;border:1px solid #000;padding:4px}
+.mono-segment{flex:1;min-width:0;min-height:38px;border:0;background:#fff;color:#000;font-size:13px;font-weight:730;white-space:nowrap}
+.mono-segment[aria-pressed="true"]{background:#000;color:#fff}
+.mono-choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.mono-choice{border:1px solid #000;border-radius:0;background:#fff;color:#000;min-height:38px;padding:8px 2px;font-size:12px}
+.mono-choice[aria-pressed="true"]{background:#000;color:#fff;font-weight:800}
+.mono-content{min-width:0}
+.mono-content-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:4px 0 24px}
+.mono-content-top h1{margin:0 0 2px;font-size:27px;letter-spacing:-1.1px;line-height:1.4}
+.mono-subtitle{margin:0;color:#555;font-size:13px;word-break:keep-all}
+.mono-small-link{white-space:nowrap;font-size:12px;font-weight:750;text-decoration:underline;text-underline-offset:2px}
+.mono-search{height:58px;display:flex;align-items:center;gap:12px;background:#fff;border:1px solid #000;padding:0 18px}
+.mono-search:focus-within{box-shadow:0 0 0 1px #000}
+.mono-search input{flex:1;min-width:0;width:100%;border:0;outline:none;background:transparent;color:#000;font-size:14px}
+.mono-search input::placeholder{color:#888}
+.mono-search-icon{width:21px;flex:none;text-align:center;font-size:22px;line-height:1}
+.mono-shortcut{border:1px solid #dedede;padding:3px 7px;color:#777;font-size:11px;line-height:1.2}
+.mono-toolbar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin:24px 0 13px;font-size:13px}
+.mono-result-count{font-size:13px;color:#555}
+.mono-result-count strong{font-size:19px;font-weight:830;color:#000}
+.mono-sort{display:flex;align-items:center;gap:10px;font-size:12px;color:#555;white-space:nowrap}
+.mono-sort select{width:118px;min-height:36px;padding:7px 10px;font-size:12px}
+.mono-result-list{display:grid;gap:12px}
+.mono-card{padding:22px 23px;border:1px solid #ddd;background:#fff;min-width:0}
+.mono-card:hover{border-color:#000}
+.mono-tags{display:flex;gap:6px;flex-wrap:wrap}
+.mono-tag{display:inline-flex;align-items:center;max-width:100%;padding:3px 8px;border:1px solid #ddd;background:#fff;color:#333;font-size:11px;font-weight:800;line-height:1.55;overflow-wrap:anywhere}
+.mono-card-title{margin:13px 0 8px;font-size:17px;letter-spacing:-.5px;font-weight:790;line-height:1.55;word-break:keep-all}
+.mono-card-summary{margin:0;color:#555;font-size:12px}
+.mono-card-bottom{margin-top:18px;padding-top:14px;border-top:1px solid #ddd;display:flex;justify-content:flex-end;align-items:center;gap:12px}
+.mono-actions{display:flex;flex-wrap:wrap;justify-content:flex-end;align-items:center;gap:8px;min-width:0;max-width:100%}
+.mono-action{min-height:36px;display:inline-flex;justify-content:center;align-items:center;padding:7px 11px;border:1px solid #000;border-radius:0;background:#fff;color:#000;font-size:12px;font-weight:750;text-align:center;overflow-wrap:anywhere;word-break:keep-all}
+.mono-action:hover{background:#f0f0f0}
+.mono-action--primary{background:#000;color:#fff}
+.mono-action--primary:hover{background:#222}
+.mono-footer{border-top:1px solid #ddd;padding:24px 0;color:#555;font-size:11px}
+.mono-demo-note{margin-top:25px;color:#555;font-size:11px;line-height:1.8}
+.mono-dialog{width:min(620px,calc(100% - 32px));max-height:85vh;overflow:auto;margin:auto;padding:22px;border:1px solid #222;border-radius:12px;background:#fff;color:#111;box-shadow:0 16px 52px rgba(0,0,0,.18)}
+.mono-dialog::backdrop{background:rgba(0,0,0,.52)}
+.mono-dialog-head{display:flex;align-items:start;justify-content:space-between;gap:20px}
+.mono-dialog h2{font-size:19px;line-height:1.4;margin:0 0 12px}
+.mono-dialog p{font-size:14px;color:#555}
+.mono-empty{border:1px solid #ddd;padding:32px 20px;text-align:center;font-size:13px;color:#555}
+.mono-empty strong{display:block;color:#111;font-size:16px;margin-bottom:5px}
+.mono-demo-status{color:#555;font-size:12px}
+@media(max-width:950px){.mono-workspace{grid-template-columns:225px minmax(0,1fr);gap:18px}.mono-filter-panel{padding:19px}.mono-card{padding:19px}}
+@media(max-width:710px){
+ .mono-shell{width:min(calc(100% - 32px),590px)}.mono-header{height:70px}.mono-brand{font-size:14px}
+ .mono-workspace{display:flex;flex-direction:column;gap:25px;padding-block:22px 45px}
+ .mono-filter-panel{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:15px;row-gap:0;width:100%;padding:18px}
+ .mono-filter-head{grid-column:1/-1;margin-bottom:12px}.mono-filter-head h2{font-size:17px}
+ .mono-filter-group{margin-bottom:15px}.mono-filter-group--wide{grid-column:1/-1}.mono-filter-label{font-size:12px;margin-bottom:7px}
+ .mono-select{min-height:42px}.mono-content{width:100%}.mono-content-top{margin:0 0 17px}.mono-content-top h1{font-size:23px}
+ .mono-subtitle{font-size:12px}.mono-search{height:54px}.mono-card{padding:17px}.mono-card-title{font-size:15px}
+}
+@media(max-width:440px){.mono-toolbar{align-items:stretch;flex-direction:column}.mono-sort{justify-content:flex-end}.mono-shortcut{display:none}}
+@media(max-width:390px){.mono-filter-panel{column-gap:10px}.mono-content-top .mono-small-link{display:none}.mono-card-bottom{align-items:stretch;flex-direction:column}.mono-actions{width:100%;justify-content:stretch}.mono-action{flex:1 1 auto}.mono-header-inner{gap:8px}.mono-header .mono-button{padding-inline:10px}}
+@media(prefers-reduced-motion:reduce){.mono-page *{scroll-behavior:auto!important;transition:none!important;animation:none!important}}

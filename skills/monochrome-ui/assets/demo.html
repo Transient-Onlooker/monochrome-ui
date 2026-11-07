@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Monochrome UI — Interactive Example</title><link rel="stylesheet" href="./monochrome.css"></head>
+<body class="mono-page">
+<a class="mono-sr-only" href="#results">검색 결과로 건너뛰기</a>
+<header class="mono-header"><div class="mono-shell mono-header-inner">
+<div class="mono-brand">Workspace <strong>Library</strong></div><button id="helpOpen" class="mono-button" type="button">도움말</button>
+</div></header>
+<main class="mono-shell mono-workspace">
+<aside class="mono-filter-panel" aria-label="검색 필터">
+<div class="mono-filter-head"><h2>상세 검색</h2><button class="mono-text-action" type="button" id="reset">초기화</button></div>
+<div class="mono-filter-group mono-filter-group--wide"><span class="mono-filter-label">자료 종류</span>
+<div class="mono-segments" role="group" aria-label="자료 종류" id="kindGroup">
+<button class="mono-segment" type="button" data-value="all" aria-pressed="true">전체</button>
+<button class="mono-segment" type="button" data-value="doc" aria-pressed="false">문서</button>
+<button class="mono-segment" type="button" data-value="project" aria-pressed="false">프로젝트</button>
+</div></div>
+<div class="mono-filter-group"><label class="mono-filter-label" for="category">카테고리</label>
+<select class="mono-select" id="category"><option value="all">전체 카테고리</option><option value="dev">개발</option><option value="research">연구</option></select></div>
+<div class="mono-filter-group"><label class="mono-filter-label" for="year">작성 연도</label>
+<select class="mono-select" id="year"><option value="all">전체 연도</option><option value="2026">2026</option><option value="2025">2025</option></select></div>
+<div class="mono-filter-group mono-filter-group--wide"><span class="mono-filter-label">상태</span>
+<div class="mono-choices" role="group" aria-label="상태" id="statusGroup">
+<button class="mono-choice" type="button" data-value="all" aria-pressed="true">전체</button>
+<button class="mono-choice" type="button" data-value="active" aria-pressed="false">진행</button>
+<button class="mono-choice" type="button" data-value="done" aria-pressed="false">완료</button>
+</div></div></aside>
+<section class="mono-content" id="results" aria-label="검색 결과">
+<div class="mono-content-top"><div><h1>자료 검색</h1><p class="mono-subtitle">필요한 자료를 조건별로 빠르게 찾아보세요.</p></div><a class="mono-small-link" href="#list">목록 바로가기</a></div>
+<div class="mono-search"><span class="mono-search-icon" aria-hidden="true">⌕</span><label class="mono-sr-only" for="query">검색어</label>
+<input id="query" type="search" autocomplete="off" placeholder="제목이나 키워드를 입력하세요"><kbd class="mono-shortcut" aria-hidden="true">/</kbd></div>
+<div class="mono-toolbar"><div class="mono-result-count" role="status" aria-live="polite"><strong id="count">3</strong>개의 검색 결과</div>
+<label class="mono-sort">정렬 <select class="mono-select" id="sort"><option value="new">최신순</option><option value="old">오래된순</option><option value="title">제목순</option></select></label></div>
+<div class="mono-result-list" id="list">
+<article class="mono-card" data-year="2026" data-kind="project" data-category="dev" data-status="active">
+<div class="mono-tags"><span class="mono-tag">2026</span><span class="mono-tag">개발</span><span class="mono-tag">진행</span></div>
+<h2 class="mono-card-title">프로젝트 아키텍처 정리</h2><p class="mono-card-summary">설계 개요 · 구현 계획 · 테스트 항목</p>
+<div class="mono-card-bottom"><div class="mono-actions"><button type="button" class="mono-action mono-action--primary" data-detail="1">내용 보기</button></div></div></article>
+<article class="mono-card" data-year="2026" data-kind="doc" data-category="research" data-status="done">
+<div class="mono-tags"><span class="mono-tag">2026</span><span class="mono-tag">연구</span><span class="mono-tag">완료</span></div>
+<h2 class="mono-card-title">센서 데이터 분석 노트</h2><p class="mono-card-summary">실험 기록 · 요약 · 시각화</p>
+<div class="mono-card-bottom"><div class="mono-actions"><button type="button" class="mono-action mono-action--primary" data-detail="1">내용 보기</button></div></div></article>
+<article class="mono-card" data-year="2025" data-kind="doc" data-category="dev" data-status="done">
+<div class="mono-tags"><span class="mono-tag">2025</span><span class="mono-tag">개발</span><span class="mono-tag">완료</span></div>
+<h2 class="mono-card-title">기술 문서 모음</h2><p class="mono-card-summary">참고 자료 · 구현 기록</p>
+<div class="mono-card-bottom"><div class="mono-actions"><button type="button" class="mono-action mono-action--primary" data-detail="1">내용 보기</button></div></div></article>
+</div><div class="mono-empty" id="empty" hidden><strong>검색 결과가 없습니다.</strong>검색어나 필터를 변경해 보세요.</div>
+<p class="mono-demo-note">이 페이지는 스타일과 기본 인터랙션을 보여주는 로컬 예제입니다. 외부 서비스와 연결하지 않습니다.</p>
+</section></main><footer class="mono-footer"><div class="mono-shell">Monochrome UI · Interactive reference</div></footer>
+<dialog class="mono-dialog" id="help"><div class="mono-dialog-head"><h2>디자인 안내</h2><button class="mono-button" type="button" data-close="help" aria-label="도움말 닫기">×</button></div>
+<p>흰색 배경, 각진 컨트롤, 얇은 테두리와 간결한 정보 구조가 중심입니다. 검색·필터·정렬 기능을 직접 시험해 보세요.</p></dialog>
+<dialog class="mono-dialog" id="detail"><div class="mono-dialog-head"><h2 id="detailTitle">자료 내용</h2><button class="mono-button" type="button" data-close="detail" aria-label="내용 닫기">×</button></div><p id="detailText"></p></dialog>
+<script>
+'use strict';
+const query=document.querySelector('#query');
+const year=document.querySelector('#year');
+const category=document.querySelector('#category');
+const sort=document.querySelector('#sort');
+const list=document.querySelector('#list');
+const cards=[...list.querySelectorAll('.mono-card')];
+const kindGroup=document.querySelector('#kindGroup');
+const statusGroup=document.querySelector('#statusGroup');
+const selected=g=>g.querySelector('[aria-pressed="true"]').dataset.value;
+function render(){
+  const q=query.value.trim().toLocaleLowerCase('ko');
+  const ordered=[...cards].sort((a,b)=>{
+    if(sort.value==='title')return a.querySelector('h2').textContent.localeCompare(b.querySelector('h2').textContent,'ko');
+    const d=Number(b.dataset.year)-Number(a.dataset.year);return sort.value==='old'?-d:d;
+  });
+  list.append(...ordered);
+  let count=0;
+  for(const card of ordered){
+    const visible=(year.value==='all'||card.dataset.year===year.value)
+      &&(category.value==='all'||card.dataset.category===category.value)
+      &&(selected(kindGroup)==='all'||card.dataset.kind===selected(kindGroup))
+      &&(selected(statusGroup)==='all'||card.dataset.status===selected(statusGroup))
+      &&(!q||card.textContent.toLocaleLowerCase('ko').includes(q));
+    card.hidden=!visible;if(visible)count++;
+  }
+  document.querySelector('#count').textContent=count;
+  document.querySelector('#empty').hidden=count!==0;
+}
+function selectInGroup(group,v){
+  for(const button of group.querySelectorAll('button'))button.setAttribute('aria-pressed',String(button.dataset.value===v));
+}
+for(const group of [kindGroup,statusGroup])group.addEventListener('click',event=>{
+  const button=event.target.closest('button[data-value]');
+  if(!button||!group.contains(button))return;
+  selectInGroup(group,button.dataset.value);render();
+});
+for(const input of [query,year,category,sort])input.addEventListener(input===query?'input':'change',render);
+document.querySelector('#reset').addEventListener('click',()=>{
+  query.value='';year.value='all';category.value='all';sort.value='new';
+  selectInGroup(kindGroup,'all');selectInGroup(statusGroup,'all');render();
+});
+document.querySelector('#helpOpen').addEventListener('click',()=>document.querySelector('#help').showModal());
+document.querySelectorAll('[data-close]').forEach(button=>button.addEventListener('click',()=>document.getElementById(button.dataset.close).close()));
+list.addEventListener('click',event=>{
+  const button=event.target.closest('button[data-detail]');if(!button)return;
+  const card=button.closest('article');
+  document.querySelector('#detailTitle').textContent=card.querySelector('h2').textContent;
+  document.querySelector('#detailText').textContent=card.querySelector('.mono-card-summary').textContent;
+  document.querySelector('#detail').showModal();
+});
+document.addEventListener('keydown',event=>{
+  if(event.key!=='/'||event.altKey||event.ctrlKey||event.metaKey)return;
+  if(event.target.matches('input,textarea,select,[contenteditable="true"]'))return;
+  event.preventDefault();query.focus();
+});
+render();
+</script></body></html>
